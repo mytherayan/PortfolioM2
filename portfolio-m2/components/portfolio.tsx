@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
+import aboutMeImage from '../app/aboutme.jpg';
+import shoeappImage from  '../app/shoe_app.png';
 
 // const BackgroundAnimation = () => (
 //   <svg
@@ -276,12 +278,13 @@ export function PortfolioComponent() {
 
               <motion.div className="relative h-64 md:h-auto" variants={fadeInUp}>
                 <Image 
-                  src="/placeholder.svg" 
+                  src={aboutMeImage}
                   alt="MYTHERAYAN" 
-                  layout="fill" 
-                  objectFit="cover" 
+                  // layout="fill" 
+                  // objectFit="fill" 
                   className="rounded-lg"
                 />
+                
               </motion.div>
             </div>
           </div>
@@ -330,16 +333,16 @@ export function PortfolioComponent() {
           viewport={{ once: true }}
           variants={staggerChildren}
         >
-          <div className="container mx-auto px-4">
+          {/* <div className="container mx-auto px-4">
             <motion.h2 className="text-3xl font-bold mb-8" variants={fadeInUp}>Projects</motion.h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { title: "E-commerce Platform", desc: "A full-stack online store with React, Node.js, and MongoDB", type: "Web" },
-                { title: "Fitness Tracker App", desc: "Cross-platform mobile app built with React Native and Firebase", type: "Mobile" },
-                { title: "Task Management System", desc: "Collaborative project management tool using Next.js and GraphQL", type: "Web" },
-                { title: "Smart Home IoT Dashboard", desc: "Real-time IoT control panel with React and WebSockets", type: "Web" },
-                { title: "Social Media Analytics Tool", desc: "Data visualization dashboard using D3.js and Express", type: "Web" },
-                { title: "Augmented Reality Navigation", desc: "iOS app with ARKit for indoor navigation", type: "Mobile" },
+                { title: "E-commerce Platform", desc: "A full-stack online store with React, Node.js, and MongoDB", type: "Web",image: "{aboutMeImage}" },
+                { title: "Fitness Tracker App", desc: "Cross-platform mobile app built with React Native and Firebase", type: "Mobile",image: "{aboutMeImage}" },
+                { title: "Task Management System", desc: "Collaborative project management tool using Next.js and GraphQL", type: "Web",image: "{aboutMeImage}" },
+                { title: "Smart Home IoT Dashboard", desc: "Real-time IoT control panel with React and WebSockets", type: "Web",image: "{aboutMeImage}" },
+                { title: "Social Media Analytics Tool", desc: "Data visualization dashboard using D3.js and Express", type: "Web",image: "{aboutMeImage}" },
+                { title: "Augmented Reality Navigation", desc: "iOS app with ARKit for indoor navigation", type: "Mobile",image: "{aboutMeImage}" },
               ].map((project, index) => (
                 <motion.div 
                   key={index} 
@@ -348,7 +351,7 @@ export function PortfolioComponent() {
                 >
                   <div className="relative h-48">
                     <Image 
-                      src="/placeholder.svg" 
+                      src={project.image}
                       alt={project.title} 
                       layout="fill" 
                       objectFit="cover"
@@ -365,7 +368,44 @@ export function PortfolioComponent() {
                 </motion.div>
               ))}
             </div>
+          </div> */}
+          <div className="container mx-auto px-4">
+  <motion.h2 className="text-3xl font-bold mb-8" variants={fadeInUp}>Projects</motion.h2>
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {[  
+      { title: "Home Appliance", desc: "A front-End online store with Flutter and Dart", type: "Mobile", image: aboutMeImage, href: "/projects/ecommerce" },
+      { title: "Nike Shoe Application", desc: "Cross-platform mobile app built with Flutter and Rest Api", type: "Mobile", image: shoeappImage, href: "/projects/fitness-tracker" },
+      { title: "Task Management System", desc: "Collaborative project management tool using Next.js and GraphQL", type: "Web", image: aboutMeImage, href: "/projects/task-manager" },
+      { title: "Smart Home IoT Dashboard", desc: "Real-time IoT control panel with React and WebSockets", type: "Web", image: aboutMeImage, href: "/projects/smart-home" },
+      { title: "Social Media Analytics Tool", desc: "Data visualization dashboard using D3.js and Express", type: "Web", image: aboutMeImage, href: "/projects/social-media" },
+      { title: "Augmented Reality Navigation", desc: "iOS app with ARKit for indoor navigation", type: "Mobile", image: aboutMeImage, href: "/projects/ar-navigation" },
+    ].map((project, index) => (
+      <motion.div 
+        key={index} 
+        className="bg-card/30 backdrop-blur-md rounded-lg overflow-hidden shadow-lg transition-all hover:scale-105 hover:bg-card/50"
+        variants={fadeInUp}
+      >
+        <div className="relative h-48">
+          <Image 
+            src={project.image}
+            alt={project.title} 
+            fill 
+            className="object-cover"
+          />
+          <div className="absolute top-2 right-2 bg-primary text-primary-foreground px-2 py-1 rounded text-sm">
+            {project.type}
           </div>
+        </div>
+        <div className="p-4">
+          <h3 className="font-bold mb-2">{project.title}</h3>
+          <p className="text-sm mb-4">{project.desc}</p>
+          <Link href={project.href} className="text-primary hover:underline">View Project</Link>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</div>
+
         </motion.section>
 
         <motion.section 
