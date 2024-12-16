@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## Getting Started
 
 First, run the development server:
-<iframe src='https://my.spline.design/nexbotrobotcharacterconcept-5942b21042eb9754987bc64cb603f294/' frameborder='0' width='100%' height='100%'></iframe>
+
 ```bash
 npm run dev
 # or
