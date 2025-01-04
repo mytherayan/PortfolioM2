@@ -369,16 +369,30 @@ export function PortfolioComponent() {
   ];
   
   const food_app = [
-    "../app/food1.png",
-    "../app/food2.png",
-    "../app/food3.png",
-    "../app/food4.png",
-    "../app/food5.png",
-    "../app/food6.png"
+   
+    "https://raw.githubusercontent.com/mytherayan/PortfolioM2/refs/heads/main/portfolio-m3/app/food1.png",
+    "https://raw.githubusercontent.com/mytherayan/PortfolioM2/refs/heads/main/portfolio-m3/app/food2.png",
+    "https://raw.githubusercontent.com/mytherayan/PortfolioM2/refs/heads/main/portfolio-m3/app/food3.png",
+    "https://raw.githubusercontent.com/mytherayan/PortfolioM2/refs/heads/main/portfolio-m3/app/food4.png",
+    "https://raw.githubusercontent.com/mytherayan/PortfolioM2/refs/heads/main/portfolio-m3/app/food5.png",
+    "https://raw.githubusercontent.com/mytherayan/PortfolioM2/refs/heads/main/portfolio-m3/app/food6.png",
+    
   ];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   useEffect(() => { const interval = setInterval(() => setCurrentImageIndex(i => (i + 1) % images.length), 2000); return () => clearInterval(interval); }, []);
   
+  // Current food image index state
+  const [currentFoodImageIndex, setCurrentFoodImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFoodImageIndex((prevIndex) => (prevIndex + 1) % food_app.length);
+    }, 2000); // Switch every 2 seconds
+
+    // Cleanup interval when component unmounts
+    return () => clearInterval(interval);
+  }, [food_app.length]); // Depend on food_app.length to be reactive if it changes
+
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
@@ -520,7 +534,7 @@ export function PortfolioComponent() {
           </div>
         </motion.section>
      <div className="container mx-auto px-4">
-     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+     {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <Iphone15Pro
         className="size-full"
         src={images[currentImageIndex]}
@@ -531,14 +545,192 @@ export function PortfolioComponent() {
       />
        <Iphone15Pro
         className="size-full"
-        src={food_app[currentImageIndex]}
+        src={food_app[currentFoodImageIndex]}
       />
        <Iphone15Pro
         className="size-full"
         src={images[currentImageIndex]}
       />
 
-      </div>
+      </div> */}
+
+      {/* shoe app */}
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-8"> */}
+  {/* Image Section */}
+  {/* <Iphone15Pro className="w-full h-full object-contain col-span-1" src={images[currentImageIndex]} /> */}
+  
+  {/* E-commerce Project Info Section */}
+  {/* <div className="col-span-3 md:col-span-2 lg:col-span-3 mt-4 md:mt-0 text-center">
+    <p className="font-bold text-xl">E-Commerce Project</p>
+    <p className="text-sm text-gray-500 mt-2">
+      This is an e-commerce project built using **Flutter**, providing a seamless shopping experience. It utilizes a **REST API** for fetching product data, managing user accounts, and processing orders.
+    </p>
+  
+    <p className="font-bold text-xl mt-4">Project Features</p>
+    <ul className="list-inside text-left mt-2 space-y-2">
+      <li>Built with **Flutter** for a smooth, cross-platform mobile experience.</li>
+      <li>Integrated with a **REST API** to handle real-time data fetching and updating of products, users, and orders.</li>
+      <li>Responsive design that adapts seamlessly to mobile, tablet, and desktop devices.</li>
+      <li>Fast and reliable backend services powered by modern RESTful principles.</li>
+      <li>User authentication and authorization for secure access to user profiles and orders.</li>
+    </ul>
+  </div>
+</div> */}
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-8">
+  {/* Image Section */}
+  <Iphone15Pro className="w-full h-full object-contain col-span-1" src={images[currentImageIndex]} />
+  
+  {/* E-commerce Project Info Section */}
+  <div className="col-span-3 md:col-span-2 lg:col-span-3 mt-4 md:mt-0 text-left"> {/* Ensure left alignment */}
+    <p className="font-bold text-xl">E-Commerce Project</p>
+    <p className="text-sm text-gray-500 mt-2">
+      This is an e-commerce project built using <strong>Flutter</strong>, providing a seamless shopping experience. It utilizes a <strong>REST API</strong> for fetching product data, managing user accounts, and processing orders.
+    </p>
+  
+    <p className="font-bold text-xl mt-4">Project Features</p>
+    <ul className="list-disc pl-5 mt-2 space-y-2"> {/* Correct list style and indentation */}
+      <li>Built with <strong>Flutter</strong> for a smooth, cross-platform mobile experience.</li>
+      <li>Integrated with a <strong>REST API</strong> to handle real-time data fetching and updating of products, users, and orders.</li>
+      <li>Responsive design that adapts seamlessly to mobile, tablet, and desktop devices.</li>
+      <li>Fast and reliable backend services powered by modern RESTful principles.</li>
+      <li>User authentication and authorization for secure access to user profiles and orders.</li>
+    </ul>
+  </div>
+</div>
+
+{/* timber */}
+{/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-8"> */}
+  {/* E-commerce Project Info Section */}
+  {/* <div className="col-span-3 md:col-span-2 lg:col-span-3 mt-4 md:mt-0 text-center">
+  <p className="font-bold text-xl">A Feature-Rich Furniture Shopping App</p>
+      <p className="text-sm text-gray-500 mt-2">
+        Timberr is a fully-featured furniture shopping app built with <strong>Flutter</strong>, <strong>Supabase</strong>, and <strong>Getx State Management</strong>. It offers an intuitive and immersive shopping experience with a modern UI design.
+      </p>
+
+      <p className="font-bold text-xl mt-4">Key Features</p>
+      <ul className="list-inside text-left mt-2 space-y-2">
+        <li><strong>Authentication:</strong> Secure user accounts and login with profile management.</li>
+        <li><strong>Cart:</strong> Add, remove, and manage items easily for a smooth checkout.</li>
+        <li><strong>Favorites:</strong> Curate a personalized list of favorite items for quick access.</li>
+        <li><strong>Address Management:</strong> Save and update preferred delivery addresses.</li>
+        <li><strong>Search & Filter:</strong> Find items quickly with advanced search and filters.</li>
+        <li><strong>Color Selection:</strong> Customize furniture with various color options.</li>
+        <li><strong>Payment Methods:</strong> Multiple secure payment options, including Razorpay integration.</li>
+        <li><strong>User Profile:</strong> Manage profile settings, including picture, name, and password.</li>
+        <li><strong>Smooth Animations:</strong> Engaging animations for a delightful UI experience.</li>
+        <li><strong>Future Features:</strong> Reviews, order history, and notifications coming soon.</li>
+      </ul>
+
+      <p className="mt-4">
+        Timberr is your go-to app for a seamless and personalized furniture shopping experience.
+      </p>
+  </div>  */}
+  {/* Image Section */}
+  {/* <Iphone15Pro className="w-full h-full object-contain col-span-1" src="https://github.com/adeeteya/FlutterFurnitureApp/raw/master/images/add_to_cart.gif" />
+  
+ 
+</div> */}
+
+
+{/* timber */}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-8">
+  {/* E-commerce Project Info Section */}
+  <div className="col-span-3 md:col-span-2 lg:col-span-3 mt-4 md:mt-0 text-left order-2 md:order-1"> {/* Add order classes */}
+    <p className="font-bold text-xl">A Feature-Rich Furniture Shopping App</p>
+    <p className="text-sm text-gray-500 mt-2">
+      Timberr is a fully-featured furniture shopping app built with <strong>Flutter</strong>, <strong>Supabase</strong>, and <strong>Getx State Management</strong>. It offers an intuitive and immersive shopping experience with a modern UI design.
+    </p>
+
+    <p className="font-bold text-xl mt-4">Key Features</p>
+    <ul className="list-disc pl-5 mt-2 space-y-2">
+      <li><strong>Authentication:</strong> Secure user accounts and login with profile management.</li>
+      <li><strong>Cart:</strong> Add, remove, and manage items easily for a smooth checkout.</li>
+      <li><strong>Favorites:</strong> Curate a personalized list of favorite items for quick access.</li>
+      <li><strong>Address Management:</strong> Save and update preferred delivery addresses.</li>
+      <li><strong>Search & Filter:</strong> Find items quickly with advanced search and filters.</li>
+      <li><strong>Color Selection:</strong> Customize furniture with various color options.</li>
+      <li><strong>Payment Methods:</strong> Multiple secure payment options, including Razorpay integration.</li>
+      <li><strong>User Profile:</strong> Manage profile settings, including picture, name, and password.</li>
+      <li><strong>Smooth Animations:</strong> Engaging animations for a delightful UI experience.</li>
+      <li><strong>Future Features:</strong> Reviews, order history, and notifications coming soon.</li>
+    </ul>
+
+    <p className="mt-4">
+      Timberr is your go-to app for a seamless and personalized furniture shopping experience.
+    </p>
+  </div>
+
+  {/* Image Section */}
+  <Iphone15Pro className="w-full h-full object-contain col-span-1 order-1 md:order-2" src="https://github.com/adeeteya/FlutterFurnitureApp/raw/master/images/add_to_cart.gif" />
+</div>
+
+{/* food app */}
+{/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-8"> */}
+  {/* Image Section */}
+  {/* <Iphone15Pro className="w-full h-full object-contain col-span-1" src={food_app[currentFoodImageIndex]} /> */}
+  
+  {/* E-commerce Project Info Section */}
+  {/* <div className="col-span-3 md:col-span-2 lg:col-span-3 mt-4 md:mt-0 text-center">
+    <p className="font-bold text-xl">E-Commerce Project</p>
+    <p className="text-sm text-gray-500 mt-2">
+      This is an e-commerce project built using **Flutter**, providing a seamless shopping experience. It utilizes a **REST API** for fetching product data, managing user accounts, and processing orders.
+    </p>
+  
+    <p className="font-bold text-xl mt-4">Project Features</p>
+    <ul className="list-inside text-left mt-2 space-y-2">
+      <li>Built with **Flutter** for a smooth, cross-platform mobile experience.</li>
+      <li>Integrated with a **REST API** to handle real-time data fetching and updating of products, users, and orders.</li>
+      <li>Responsive design that adapts seamlessly to mobile, tablet, and desktop devices.</li>
+      <li>Fast and reliable backend services powered by modern RESTful principles.</li>
+      <li>User authentication and authorization for secure access to user profiles and orders.</li>
+    </ul>
+  </div>
+</div> */}
+{/* food app */}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-8">
+  {/* Image Section */}
+  <Iphone15Pro className="w-full h-full object-contain col-span-1" src={food_app[currentFoodImageIndex]} />
+  
+  {/* Restaurant Takeaway App Info Section */}
+  <div className="col-span-3 md:col-span-2 lg:col-span-3 mt-4 md:mt-0 text-left">
+    <p className="font-bold text-xl">Restaurant & Takeaway Food Order</p>
+    <p className="text-sm text-gray-500 mt-2">
+      This is a simple food ordering app designed for both takeaway and dine-in orders. Browse the menu, place your order, and get notified when it’s ready to be served at your table.
+    </p>
+  
+    <p className="font-bold text-xl mt-4">Key Features</p>
+    <ul className="list-disc pl-5 mt-2 space-y-2">
+      <li><strong>Menu Browsing:</strong> View an extensive menu with detailed item descriptions and images.</li>
+      <li><strong>Order Placement:</strong> Easily place orders for takeaway or in-restaurant dining.</li>
+      <li><strong>Real-Time Order Tracking:</strong> Track the status of your order until it’s ready for pickup or delivery.</li>
+      <li><strong>Customizable Orders:</strong> Modify your order with special requests and ingredient adjustments.</li>
+      <li><strong>Table Reservation:</strong> Reserve a table for dine-in with preferred time slots.</li>
+      <li><strong>Order History:</strong> Access past orders for easy reordering and quick browsing.</li>
+      <li><strong>User Authentication:</strong> Secure login for personalized settings and preferences.</li>
+    </ul>
+  </div>
+</div>
+
+
+
+      {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+
+    <Iphone15Pro className="size-full" src={images[currentImageIndex]} />
+    <div className="mt-4 text-center">
+      
+    </div>
+    <div className="mt-4 text-center">
+      <p className="font-bold">Phone 1 Description</p>
+      <ul className="list-disc list-inside mt-2">
+        <li>Feature 1 of Phone 1</li>
+        <li>Feature 2 of Phone 1</li>
+        <li>Feature 3 of Phone 1</li>
+      </ul>
+    </div>
+
+</div> */}
+
     </div>
 
 
