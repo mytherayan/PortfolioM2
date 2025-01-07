@@ -13,13 +13,6 @@ import { Textarea } from "@/components/ui/textarea"
 import aboutMeImage from '../app/aboutme.jpg';
 import profileImage from '../app/rb_17049.png'
 import shoeappImage from  '../app/shoe_app.png';
-import food1 from '../app/food1.png'
-import food2 from '../app/food2.png'
-import food3 from '../app/food3.png'
-import food4 from '../app/food4.png'
-import food5 from '../app/food5.png'
-import food6 from '../app/food6.png'
-import project1 from  '../app/Capture.png';
 import {MarqueeDemo} from  '@/components/comments';
 import Iphone15Pro from "@/components/ui/iphone-15-pro";
 import RetroGrid from "@/components/ui/retro-grid";

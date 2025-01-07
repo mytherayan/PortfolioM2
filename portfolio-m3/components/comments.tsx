@@ -30,7 +30,7 @@ const reviews = [
 ];
 
 const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2); // Unused variable, but can be used for the second Marquee
+
 
 const ReviewCard = ({
   img,
@@ -77,14 +77,7 @@ export function MarqueeDemo() {
         ))}
       </Marquee>
 
-      {/* Uncomment and use the second Marquee if you'd like to display the second set of reviews */}
-      {/* 
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      */}
+      
 
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
     </div>
