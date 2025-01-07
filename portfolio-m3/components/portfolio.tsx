@@ -469,12 +469,12 @@ export function PortfolioComponent() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div variants={fadeInUp}>
               <p className="mb-4">
-                Hi, I'm a passionate mobile app developer with a focus on Android and iOS platforms, as well as a web developer with 3 years of experience. 
+                Hi, I’m a passionate mobile app developer with a focus on Android and iOS platforms, as well as a web developer with 3 years of experience. 
                 I specialize in building intuitive and responsive applications that deliver great user experiences on both mobile and web.
               </p>
               <p className="mb-4">
                 Over the past few years, I’ve honed my skills in various frameworks and technologies, allowing me to create seamless cross-platform applications. 
-                Whether it's crafting engaging user interfaces or developing robust back-end solutions, I thrive on bringing ideas to life through code.
+                Whether it’s crafting engaging user interfaces or developing robust back-end solutions, I thrive on bringing ideas to life through code.
               </p>
               <p>
                 Outside of work, I’m constantly exploring new technologies, refining my skills, and working on side projects that push the boundaries of what’s possible in app and web development.
@@ -782,7 +782,7 @@ export function PortfolioComponent() {
   <motion.h2 className="text-3xl font-bold mb-8" variants={fadeInUp}>Projects</motion.h2>
   <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
     {[  
-      { title: "Home Appliance", desc: "A front-End online store with Flutter and Dart", type: "Mobile", image: aboutMeImage, href: "/projects/ecommerce" },
+      { title: "Dotshop", desc: "A Sigle page online store by typescript & React", type: "Web", image: aboutMeImage, href: "/projects/ecommerce" },
       { title: "Nike Shoe Application", desc: "Cross-platform mobile app built with Flutter and Rest Api", type: "Mobile", image: shoeappImage, href: "/projects/fitness-tracker" },
       { title: "Task Management System", desc: "Collaborative project management tool using Next.js and GraphQL", type: "Web", image: aboutMeImage, href: "/projects/task-manager" },
       { title: "Smart Home IoT Dashboard", desc: "Real-time IoT control panel with React and WebSockets", type: "Web", image: aboutMeImage, href: "/projects/smart-home" },
@@ -835,7 +835,7 @@ export function PortfolioComponent() {
                 <Button type="submit">Send Message</Button>
               </motion.form>
               <motion.div variants={fadeInUp}>
-                <p className="mb-4">Feel free to reach out if you have any questions, project ideas, or if you'd like to collaborate on something exciting!</p>
+                <p className="mb-4">Feel free to reach out if you have any questions, project ideas, or if you’d like to collaborate on something exciting!</p>
                 <div className="flex space-x-4">
                   <a href="#" className="text-foreground hover:text-primary transition-colors">
                     <Github />
