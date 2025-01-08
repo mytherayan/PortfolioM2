@@ -20,7 +20,7 @@ import RetroGrid from "@/components/ui/retro-grid";
 
 import { Dock, DockIcon } from "@/components/ui/dock";
 import { CalendarIcon, HomeIcon, MailIcon, PencilIcon, SunMedium } from "lucide-react";
-import Meteors from "@/components/ui/meteors";
+// import Meteors from "@/components/ui/meteors";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -523,7 +523,7 @@ export function PortfolioComponent() {
                 <p>Proficient in server-side programming, API development, and cloud infrastructure management.</p>
               </motion.div>
             </div>
-            <Meteors number={20} />
+{/*             <Meteors number={20} /> */}
           </div>
         </motion.section>
      <div className="container mx-auto px-4">
